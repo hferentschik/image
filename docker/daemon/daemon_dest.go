@@ -33,7 +33,7 @@ func newImageDestination(systemCtx *types.SystemContext, ref daemonReference) (t
 		return nil, errors.Errorf("Invalid destination docker-daemon:%s: a destination must be a name:tag", ref.StringWithinTransport())
 	}
 
-	c, err := client.NewClient(client.DefaultDockerHost, "1.22", nil, nil) // FIXME: overridable host
+	c, err := client.NewEnvClient()
 	if err != nil {
 		return nil, errors.Wrap(err, "Error initializing docker engine client")
 	}
