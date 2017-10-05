@@ -1,2 +1,5 @@
 vendor
 tools.timestamp
+
+# Idea IDE
+*.iml
